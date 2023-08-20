@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="text-center"><span class="marca">OfertAlert</span> Encuentra las mejores ofertas sin esfuerzo </h1>
+<p class="mt-4 ">Esta aplicación te permite seguir el precio de productos online y recibir alertas cuando haya ofertas.
+Sólo tienes que agregar los enlaces de los productos que te interesen separados por comas. La aplicación revisará los precios cada 30 minutos y te enviará un email si detecta un descuento o promoción.
+Así podrás estar al tanto de las mejores ofertas sin tener que buscar manualmente.</p>
+<form method="post" >
+  <div class="mb-3 mt-4">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="name@example.com" required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Introduce la url de los productos que quieres comprobar que esten en oferta</label>
+    <textarea class="form-control" id="urlInput" name="urlInput" rows="3" required placeholder="https://www.asos.com/es/raga/pantalones-cortos-de-punto-gina-de-raga-parte-de-un-conjunto/prd/202597063?clr=multicolor&colourWayId=202597070&cid=27417, https://www.bstn.com/eu_es/p/mitchell-ness-nba-swingman-shorts-philadelphia-76ers-2002-03-smshcp19073-p76red102-0196346?itm_source=webrecommendation&itm_campaign=related"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-light">Enviar</button>
+</form>
+<h2 class="text-center mt-2">Empresas que soportamos actualmente</h2>
+<div class="text-center mt-4">
+  <img src="https://1000marcas.net/wp-content/uploads/2021/06/Asos-logo.png" class="img-thumbnail img-fluid" alt="Logo Asos">
+  <img src="https://ih1.redbubble.net/image.2481855986.2724/st,small,507x507-pad,600x600,f8f8f8.jpg" class="img-thumbnail img-fluid" alt="Logo Asos">
+  <img src="https://static.bstn.com/version1691647175/frontend/BSTN/blank_child/es_ES/images/icons/logo-dark.svg" class="img-thumbnail img-fluid" alt="Logo Asos">
+</div>
+{% endblock %}

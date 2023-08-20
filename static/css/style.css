@@ -1,0 +1,16 @@
+body{
+background-color: #212F3C;
+color:white;
+}
+button{
+background-color: #85929E;
+}
+
+.marca{
+    color: #D68910;
+}
+img{
+    width: 400px;
+	height: 400px;
+	object-fit: cover;
+}
