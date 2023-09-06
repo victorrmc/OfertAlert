@@ -3,6 +3,7 @@ import ssl
 import smtplib
 import os
 
+
 def enviar_email(destinatario, tienda, enlace):
     remitente = "victormcclase@gmail.com"
     contrasena = os.environ['EMAIL_PASSWORD']
@@ -23,4 +24,3 @@ aquí tienes el enlace: {}
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=contexto) as smtp:
         smtp.login(remitente, contrasena)
         smtp.sendmail(remitente, destinatario, em.as_string())
-

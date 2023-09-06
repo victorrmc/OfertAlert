@@ -2,7 +2,7 @@ import re
 import sys
 import envio_email
 from time import sleep
-from requests_html import HTMLSession, AsyncHTMLSession
+from requests_html import HTMLSession
 
 session = HTMLSession()
 
