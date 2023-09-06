@@ -1,6 +1,6 @@
-# OfertAlert - Tu Rastreador de Ofertas Personalizado
+# OfertAlert - Tu Rastreador de Ofertas Personalizado 🛒
 
-Bienvenido a OfertAlert, tu aplicación web de seguimiento de ofertas en tiempo real. Con OfertAlert, puedes ingresar un enlace y recibir notificaciones por correo electrónico cada vez que el artículo asociado esté en oferta. La aplicación está alojada en Vercel y es fácil de configurar y usar.
+Bienvenido a OfertAlert, tu aplicación web de seguimiento de ofertas en tiempo real. Con OfertAlert, puedes ingresar un enlace y recibir notificaciones por correo electrónico cada vez que el artículo asociado esté en oferta.
 
 ## Cómo funciona
 
@@ -8,9 +8,9 @@ Bienvenido a OfertAlert, tu aplicación web de seguimiento de ofertas en tiempo 
 
 2. Ingrese tu dirección de correo electrónico en el campo proporcionado.
 
-3. Pegue el enlace del artículo que desea rastrear en el campo "Enlace del producto".
+3. Pegue el enlace del artículo que desea rastrear en el campo "Introduce la url de los productos que quieres comprobar que esten en oferta".
 
-4. Haga clic en el botón "Comenzar el seguimiento".
+4. Haga clic en el botón "Enviar".
 
 5. OfertAlert verificará automáticamente si el artículo está en oferta cada 30 minutos.
 
@@ -18,8 +18,7 @@ Bienvenido a OfertAlert, tu aplicación web de seguimiento de ofertas en tiempo 
 
 ## Configuración
 
-No se requiere configuración adicional para utilizar OfertAlert. Simplemente ingrese su dirección de correo electrónico y el enlace del producto que desea rastrear, y la aplicación se encargará del resto.
-
+No se requiere configuración adicional para utilizar OfertAlert. Simplemente ingrese su dirección de correo electrónico y el enlace del producto o los productos separados por comas que desea rastrear, y la aplicación se encargará del resto.
 
 ## Tecnologías utilizadas
 
@@ -30,5 +29,6 @@ No se requiere configuración adicional para utilizar OfertAlert. Simplemente in
 ## Contribuciones
 
 Si desea contribuir al desarrollo de OfertAlert, no dude en crear una solicitud de extracción (pull request) o informar sobre problemas (issues) en el repositorio de GitHub.
+Si te ha gustado el proyecto o te ha ayudado apoyalo con una estrella ⭐
 
 ¡Gracias por usar OfertAlert!
