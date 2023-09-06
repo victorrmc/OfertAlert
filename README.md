@@ -1,5 +1,7 @@
 # OfertAlert - Tu Rastreador de Ofertas Personalizado 🛒
 
+<img alt="Preview Screenshot of ofertalert.vercel.app" class="screenshot_image__tfvPx" src="blob:https://vercel.com/0c60a265-c3bd-43d5-9d2b-9df5a4d652d0">
+
 Bienvenido a OfertAlert, tu aplicación web de seguimiento de ofertas en tiempo real. Con OfertAlert, puedes ingresar un enlace y recibir notificaciones por correo electrónico cada vez que el artículo asociado esté en oferta.
 
 ## Cómo funciona
