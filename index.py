@@ -13,11 +13,13 @@ def home():
     if request.method == 'POST':
         email = request.form['emailInput']
         url = request.form['urlInput']
+        resultado = compobador_ofertas.comprobacion_de_datos(email, url)
+        if resultado:
+            compobador_ofertas.check_sale.delay(email, url)
+            flash(
+                '✔️ Tus productos se han regitrado correctamente cuando esten en oferta se te avisara a este correo {}'.format(
+                    email))
 
-        compobador_ofertas.check_sale.delay(email, url)
-        flash(
-            '✔️ Tus productos se han regitrado correctamente cuando esten en oferta se te avisara a este correo {}'.format(
-                email))
         return render_template('index.html')
     else:
         return render_template('index.html')

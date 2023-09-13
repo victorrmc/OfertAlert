@@ -1,10 +1,13 @@
 import re
 import sys
+import urllib.request
+
 import envio_email
 from time import sleep
 from celeryapp import celery
 from requests_html import HTMLSession
-
+from urllib.parse import urlparse
+from index import flash
 session = HTMLSession()
 
 
@@ -28,6 +31,33 @@ def buscar_tienda(url):
         # Se comprueba que indice tiene la tienda que coincide
         indice = nombres.index(match.group(0))
         return codigos[indice], nombres[indice]
+
+
+def comprobacion_de_datos(email_usu, urls_usu):
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    email_valido = True
+    if not re.fullmatch(regex, email_usu):
+        email_valido = False
+        flash(
+            ' ⚠️ has introducido mal el email:{} '.format(email_usu))
+
+    urls = urls_usu.split(',')
+    urls_validas = True  # Suponemos que todas las URLs son válidas hasta que se demuestre lo contrario
+
+    for url in urls:
+        try:
+            parsed_url = urlparse(url)
+            if not all([parsed_url.scheme, parsed_url.netloc]):
+                flash(
+                    ' ⚠️ has metido mal esta url: {}'.format(url))
+                urls_validas = False  # Si encontramos una URL no válida, actualizamos la variable a False
+                break  # No es necesario seguir comprobando las otras URLs si una no es válida
+        except ValueError:
+            urls_validas = False
+            flash(' ⚠️ has introducido mal esta url: {}'.format(url))
+            break
+
+    return email_valido and urls_validas
 
 
 # operacion con celery task lo que signfica que se puede ejecutar en segundo plano
