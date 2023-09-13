@@ -10,7 +10,7 @@ def enviar_email(destinatario, tienda, enlace):
 
     asunto = "Aprovecha ahora el producto de {} esta en oferta".format(tienda)
     mensaje = """Estas de suerte el producto de {} esta en descuento
-aquí tienes el enlace: {}
+    aquí tienes el enlace: {}
     """.format(tienda, enlace)
 
     em = EmailMessage()

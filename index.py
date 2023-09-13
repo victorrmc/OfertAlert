@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, flash
 from celeryapp import celery
 import compobador_ofertas
 
 import time
 
 app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -14,15 +15,12 @@ def home():
         url = request.form['urlInput']
 
         compobador_ofertas.check_sale.delay(email, url)
+        flash(
+            '✔️ Tus productos se han regitrado correctamente cuando esten en oferta se te avisara a este correo {}'.format(
+                email))
         return render_template('index.html')
-        #return render_template('about.html')
     else:
         return render_template('index.html')
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 
 if __name__ == '__main__':
