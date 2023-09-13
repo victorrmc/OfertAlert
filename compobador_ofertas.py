@@ -2,6 +2,7 @@ import re
 import sys
 import envio_email
 from time import sleep
+from celeryapp import celery
 from requests_html import HTMLSession
 
 session = HTMLSession()
@@ -25,31 +26,7 @@ def buscar_tienda(url):
         return codigos[indice], nombres[indice]
 
 
-def check_salee(email_usu, url_usu):
-    bool = True
-    while bool:
-        content_page = session.get(url_usu)
-        key_to_find, tienda = buscar_tienda(url_usu)
-        on_sale = content_page.text.find(key_to_find)
-        if key_to_find == "price-sales-red" or key_to_find == '<span class="percentage-savings">-':
-            if on_sale == -1:
-                print("Todavia no esta rebajado")
-                sleep(600)
-            else:
-                print("Esta rebajado")
-                envio_email.enviar_email(email_usu, tienda, url_usu)
-                bool = False
-        else:
-            if on_sale == -1:
-                print("Esta rebajado")
-                envio_email.enviar_email(email_usu, tienda, url_usu)
-                bool = False
-                print("Se envio correctamente")
-            else:
-                print("Todavia no esta rebajado")
-                sleep(600)
-
-
+@celery.task
 def check_sale(email_usu, urls_usu):
     bool = True
     urls = urls_usu.split(',')
