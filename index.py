@@ -14,8 +14,8 @@ def home():
         url = request.form['urlInput']
 
         compobador_ofertas.check_sale.delay(email, url)
-        # return render_template('index.html')
-        return render_template('about.html')
+        return render_template('index.html')
+        #return render_template('about.html')
     else:
         return render_template('index.html')
 

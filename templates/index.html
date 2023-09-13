@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% with messages = get_flashed_messages() %}
+
+{% endwith%}
+
 <h1 class="text-center"><span class="marca">OfertAlert</span> Encuentra las mejores ofertas sin esfuerzo </h1>
 <p class="mt-4 ">Esta aplicación te permite seguir el precio de productos online y recibir alertas cuando haya ofertas.
 Sólo tienes que agregar los enlaces de los productos que te interesen separados por comas. La aplicación revisará los precios cada 30 minutos y te enviará un email si detecta un descuento o promoción.
